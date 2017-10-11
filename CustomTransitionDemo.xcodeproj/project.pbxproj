@@ -14,6 +14,12 @@
 		E81BFC2B1F8DCCC8001B9E26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E81BFC291F8DCCC8001B9E26 /* LaunchScreen.storyboard */; };
 		E81BFC361F8DCCC8001B9E26 /* CustomTransitionDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC351F8DCCC8001B9E26 /* CustomTransitionDemoTests.swift */; };
 		E81BFC411F8DCCC8001B9E26 /* CustomTransitionDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC401F8DCCC8001B9E26 /* CustomTransitionDemoUITests.swift */; };
+		E81BFC4F1F8DCCFC001B9E26 /* DemoCustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC4E1F8DCCFC001B9E26 /* DemoCustomTransition.swift */; };
+		E81BFC511F8DE2DD001B9E26 /* DemoNavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC501F8DE2DD001B9E26 /* DemoNavigationControllerDelegate.swift */; };
+		E81BFC531F8DE389001B9E26 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC521F8DE389001B9E26 /* DemoViewController.swift */; };
+		E81BFC551F8DF13F001B9E26 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC541F8DF13F001B9E26 /* MainTableViewController.swift */; };
+		E81BFC571F8DF188001B9E26 /* MTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC561F8DF188001B9E26 /* MTableViewDelegate.swift */; };
+		E81BFC591F8DF199001B9E26 /* MTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC581F8DF199001B9E26 /* MTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,12 @@
 		E81BFC3C1F8DCCC8001B9E26 /* CustomTransitionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomTransitionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81BFC401F8DCCC8001B9E26 /* CustomTransitionDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionDemoUITests.swift; sourceTree = "<group>"; };
 		E81BFC421F8DCCC8001B9E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E81BFC4E1F8DCCFC001B9E26 /* DemoCustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoCustomTransition.swift; sourceTree = "<group>"; };
+		E81BFC501F8DE2DD001B9E26 /* DemoNavigationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoNavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		E81BFC521F8DE389001B9E26 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		E81BFC541F8DF13F001B9E26 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		E81BFC561F8DF188001B9E26 /* MTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTableViewDelegate.swift; sourceTree = "<group>"; };
+		E81BFC581F8DF199001B9E26 /* MTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +109,11 @@
 		E81BFC1F1F8DCCC8001B9E26 /* CustomTransitionDemo */ = {
 			isa = PBXGroup;
 			children = (
-				E81BFC201F8DCCC8001B9E26 /* AppDelegate.swift */,
 				E81BFC221F8DCCC8001B9E26 /* ViewController.swift */,
-				E81BFC241F8DCCC8001B9E26 /* Main.storyboard */,
-				E81BFC271F8DCCC8001B9E26 /* Assets.xcassets */,
-				E81BFC291F8DCCC8001B9E26 /* LaunchScreen.storyboard */,
+				E81BFC521F8DE389001B9E26 /* DemoViewController.swift */,
+				E81BFC5A1F8DF1AB001B9E26 /* MainView */,
+				E85D33A71F8E118E00FD02B1 /* Transition */,
+				E85A57631F8E72A90017D8B9 /* SupportFiles */,
 				E81BFC2C1F8DCCC8001B9E26 /* Info.plist */,
 			);
 			path = CustomTransitionDemo;
@@ -123,6 +135,36 @@
 				E81BFC421F8DCCC8001B9E26 /* Info.plist */,
 			);
 			path = CustomTransitionDemoUITests;
+			sourceTree = "<group>";
+		};
+		E81BFC5A1F8DF1AB001B9E26 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				E81BFC541F8DF13F001B9E26 /* MainTableViewController.swift */,
+				E81BFC581F8DF199001B9E26 /* MTableViewDataSource.swift */,
+				E81BFC561F8DF188001B9E26 /* MTableViewDelegate.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		E85A57631F8E72A90017D8B9 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E81BFC201F8DCCC8001B9E26 /* AppDelegate.swift */,
+				E81BFC241F8DCCC8001B9E26 /* Main.storyboard */,
+				E81BFC271F8DCCC8001B9E26 /* Assets.xcassets */,
+				E81BFC291F8DCCC8001B9E26 /* LaunchScreen.storyboard */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		E85D33A71F8E118E00FD02B1 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				E81BFC4E1F8DCCFC001B9E26 /* DemoCustomTransition.swift */,
+				E81BFC501F8DE2DD001B9E26 /* DemoNavigationControllerDelegate.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81BFC4F1F8DCCFC001B9E26 /* DemoCustomTransition.swift in Sources */,
+				E81BFC511F8DE2DD001B9E26 /* DemoNavigationControllerDelegate.swift in Sources */,
 				E81BFC231F8DCCC8001B9E26 /* ViewController.swift in Sources */,
+				E81BFC591F8DF199001B9E26 /* MTableViewDataSource.swift in Sources */,
 				E81BFC211F8DCCC8001B9E26 /* AppDelegate.swift in Sources */,
+				E81BFC551F8DF13F001B9E26 /* MainTableViewController.swift in Sources */,
+				E81BFC531F8DE389001B9E26 /* DemoViewController.swift in Sources */,
+				E81BFC571F8DF188001B9E26 /* MTableViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
