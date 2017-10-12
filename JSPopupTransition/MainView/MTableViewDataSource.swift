@@ -23,8 +23,8 @@ extension MainTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.selectionStyle = .none
-        cell.textLabel?.text = ["标题", "随便", "来", "一", "个"][indexPath.row]
-        cell.textLabel?.textColor = .white
+        cell.textLabel?.attributedText = NSAttributedString(string: ["标题", "随便", "来一", "一个", "哈哈"][indexPath.row], attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.backgroundColor: UIColor.black])
+        
         cell.backgroundColor = cellColors[indexPath.row]
         return cell
     }
