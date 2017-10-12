@@ -10,7 +10,7 @@ import UIKit
 
 class MainTableViewController: UIViewController {
 
-    var transitionDelegate = DemoNavigationControllerDelegate()
+    var transitionDelegate = JSPopupNavigationControllerDelegate()
 
     @IBOutlet var contentView: UITableView!
     var selectedOrigin: CGPoint!

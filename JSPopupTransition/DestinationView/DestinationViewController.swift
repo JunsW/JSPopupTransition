@@ -7,7 +7,7 @@
 //
 
 import UIKit
-class DemoViewController: UIViewController {
+class DestinationViewController: UIViewController {
     var fromViewOffset: CGFloat?
     
     override func viewDidLoad() {

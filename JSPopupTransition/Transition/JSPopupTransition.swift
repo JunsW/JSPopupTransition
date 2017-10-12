@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DemoCustomTransition: NSObject ,UIViewControllerAnimatedTransitioning {
+class JSPopupTransition: NSObject ,UIViewControllerAnimatedTransitioning {
     var fisrtStepHeight: CGFloat = 0
     var duration = 0.5
     
@@ -20,13 +20,17 @@ class DemoCustomTransition: NSObject ,UIViewControllerAnimatedTransitioning {
     }
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to), let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) else { return }
-        
+        let fromView = fromViewController.view!
+        let toView = toViewController.view!
+
         let container = transitionContext.containerView
-        let toView = toViewController.view
-        let fromView = fromViewController.view
-        let originalFrame = toView?.frame
+//        let toView = UIView()
+//        toView.frame = toViewController.view.frame
+//        toView.backgroundColor = fromView.backgroundColor
+        
+        let originalFrame = toView.frame
         let screentHeight = UIScreen.main.bounds.height
-        container.addSubview(toView!)
+        container.addSubview(toView)
 
         
         if fromViewController.isKind(of: MainTableViewController.self) {
@@ -36,37 +40,41 @@ class DemoCustomTransition: NSObject ,UIViewControllerAnimatedTransitioning {
             let offset = y+64-screentHeight/2+rowHeight/2
             let ratio = rowHeight/screentHeight
             
-            toView?.frame = CGRect(origin: CGPoint(x: 0,y: offset), size: (toView?.frame.size)!)
-            (toViewController as! DemoViewController).fromViewOffset = offset // TODO: guard
+            toView.frame = CGRect(origin: CGPoint(x: 0,y: offset), size: (toView.frame.size))
+            (toViewController as! DestinationViewController).fromViewOffset = offset // TODO: guard
             let duration = transitionDuration(using: transitionContext)
-            toView?.transform = CGAffineTransform(scaleX: 1, y: ratio)
-            //        fromView?.alpha = 1
+            toView.transform = CGAffineTransform(scaleX: 1, y: ratio)
+
             let partOneDuration = duration * 0.77
             let partTwoDuration = duration - partOneDuration
-            animate(view: toView!, stepOneRatio: ratio*1.2, stepTwoRatio: 1, stepOneDuration: partOneDuration, stepTwoDuration: partTwoDuration, isBack: false, backOffset: 0, finalFrame: originalFrame!) {
+            animate(view: toView, stepOneRatio: ratio*1.2, stepTwoRatio: 1, stepOneDuration: partOneDuration, stepTwoDuration: partTwoDuration, isBack: false, backOffset: 0, finalFrame: originalFrame) {
                 transitionContext.completeTransition(true)
             }
             
-        } else if fromViewController.isKind(of: DemoViewController.self){
+        } else if fromViewController.isKind(of: DestinationViewController.self){
             // 返回
             let controller = toViewController as! MainTableViewController
             let rowHeight = controller.rowHeight
 
-            let offset = (fromViewController as! DemoViewController).fromViewOffset!
+            let offset = (fromViewController as! DestinationViewController).fromViewOffset!
             let ratio = rowHeight/screentHeight
 
             let duration = transitionDuration(using: transitionContext)
-            transitionContext.containerView.bringSubview(toFront: fromView!)
+            transitionContext.containerView.bringSubview(toFront: fromView)
             
-            UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: {
-                fromView!.frame = CGRect(origin: CGPoint(x: 0,y: offset), size: UIScreen.main.bounds.size)
-                fromView!.transform = CGAffineTransform(scaleX: 1, y: ratio)
+            let firstStepDuration = duration * 0.2
+            let secondStepDuration = duration - firstStepDuration
+            UIView.animateKeyframes(withDuration: duration, delay: 0, options: [], animations: {
+                UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: firstStepDuration) {
+                    fromView.frame = CGRect(origin: CGPoint(x: 0,y: offset), size: UIScreen.main.bounds.size)
+                    fromView.transform = CGAffineTransform(scaleX: 1, y: ratio)
+                }
+                UIView.addKeyframe(withRelativeStartTime: firstStepDuration, relativeDuration: secondStepDuration) {
+                    fromView.alpha = 0
+                }
             }) { _ in
-                fromView?.alpha = 0
                 transitionContext.completeTransition(true)
-        }
-       
-        
+            }
         }
         
     }
