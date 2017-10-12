@@ -12,7 +12,7 @@
         <!--Main Table View Controller-->
         <scene sceneID="yvM-tB-z67">
             <objects>
-                <tableViewController id="Shg-bx-VZl" customClass="MainTableViewController" customModule="CustomTransitionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Shg-bx-VZl" customClass="MainTableViewController" customModule="JSPopupTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="LgP-KH-Gdx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="381" y="-51"/>
         </scene>
-        <!--Demo View Controller-->
+        <!--Destination View Controller-->
         <scene sceneID="BCE-SX-RdW">
             <objects>
-                <viewController storyboardIdentifier="Demo" id="0mx-4a-2UI" customClass="DemoViewController" customModule="CustomTransitionDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Demo" id="0mx-4a-2UI" customClass="DestinationViewController" customModule="JSPopupTransition" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1bA-l1-DBB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,6 @@
         <!--Navigation Controller-->
         <scene sceneID="zXO-X9-RF0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YTS-ey-EkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4tG-8z-bwC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gh2-nq-jZ5">
@@ -71,6 +70,7 @@
                         <segue destination="Shg-bx-VZl" kind="relationship" relationship="rootViewController" id="7iW-p7-zqR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTS-ey-EkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-339.19999999999999" y="-48.575712143928037"/>
         </scene>

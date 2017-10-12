@@ -24,6 +24,8 @@ extension MainTableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.selectionStyle = .none
         cell.textLabel?.text = ["标题", "随便", "来", "一", "个"][indexPath.row]
+        cell.textLabel?.textColor = .white
+        cell.backgroundColor = cellColors[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

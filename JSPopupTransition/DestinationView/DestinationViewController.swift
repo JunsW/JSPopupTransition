@@ -9,8 +9,24 @@
 import UIKit
 class DestinationViewController: UIViewController {
     var fromViewOffset: CGFloat?
+    var maskView: UIView?
+//    var maskViewColor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        maskView = UIView()
+        maskView!.frame = view.frame
+        maskView!.backgroundColor = .white
+        view.addSubview(maskView!)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.maskView!.alpha = 0
+        }) { _ in
+            self.maskView!.removeFromSuperview()
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
 }

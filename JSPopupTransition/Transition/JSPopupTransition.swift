@@ -20,10 +20,12 @@ class JSPopupTransition: NSObject ,UIViewControllerAnimatedTransitioning {
     }
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to), let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) else { return }
+        
         let fromView = fromViewController.view!
         let toView = toViewController.view!
 
         let container = transitionContext.containerView
+        
 //        let toView = UIView()
 //        toView.frame = toViewController.view.frame
 //        toView.backgroundColor = fromView.backgroundColor
@@ -31,17 +33,21 @@ class JSPopupTransition: NSObject ,UIViewControllerAnimatedTransitioning {
         let originalFrame = toView.frame
         let screentHeight = UIScreen.main.bounds.height
         container.addSubview(toView)
-
+        
         
         if fromViewController.isKind(of: MainTableViewController.self) {
-            let controller = fromViewController as! MainTableViewController
-            let y = controller.selectedOrigin.y
-            let rowHeight = controller.rowHeight
-            let offset = y+64-screentHeight/2+rowHeight/2
+            let fromController = fromViewController as! MainTableViewController
+            let toController = toViewController as! DestinationViewController
+            if let maskView = toController.maskView { maskView.backgroundColor = fromController.selectedCellColor }
+            let originalY = fromController.selectedOrigin.y
+            let rowHeight = fromController.rowHeight
+            let scrollOffsetY = fromController.contentView.contentOffset.y + 64
+            print(scrollOffsetY)
+            let offset = originalY+64-screentHeight/2+rowHeight/2-scrollOffsetY
             let ratio = rowHeight/screentHeight
             
             toView.frame = CGRect(origin: CGPoint(x: 0,y: offset), size: (toView.frame.size))
-            (toViewController as! DestinationViewController).fromViewOffset = offset // TODO: guard
+            (toController).fromViewOffset = offset // TODO: guard
             let duration = transitionDuration(using: transitionContext)
             toView.transform = CGAffineTransform(scaleX: 1, y: ratio)
 

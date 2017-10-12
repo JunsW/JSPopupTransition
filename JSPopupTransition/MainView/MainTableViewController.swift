@@ -14,7 +14,10 @@ class MainTableViewController: UIViewController {
 
     @IBOutlet var contentView: UITableView!
     var selectedOrigin: CGPoint!
+    var selectedCellColor: UIColor!
+    
     let rowHeight = CGFloat(120)
+    let cellColors: [UIColor] = [.yellow, .black, .red, .cyan, .blue]
     
     override func viewDidLoad() {
         super.viewDidLoad()
