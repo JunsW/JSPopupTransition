@@ -10,7 +10,10 @@ import UIKit
 class DestinationViewController: UIViewController {
     var fromViewOffset: CGFloat?
     var maskView: UIView?
-//    var maskViewColor: UIColor?
+
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var coverImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +23,16 @@ class DestinationViewController: UIViewController {
         view.addSubview(maskView!)
     }
     override func viewDidAppear(_ animated: Bool) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.maskView!.alpha = 0
-        }) { _ in
-            self.maskView!.removeFromSuperview()
-        }
+        maskView?.removeFromSuperview()
+
     }
     override func viewWillAppear(_ animated: Bool) {
         
     }
+    func setup(title: String, imageName image: String, description: String) {
+        titleLabel.text = title
+        coverImageView.image = UIImage(named: image)
+        descriptionLabel.text = description
+    }
+    
 }

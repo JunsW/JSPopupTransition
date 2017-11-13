@@ -19,6 +19,7 @@
 		E81BFC551F8DF13F001B9E26 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC541F8DF13F001B9E26 /* MainTableViewController.swift */; };
 		E81BFC571F8DF188001B9E26 /* MTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC561F8DF188001B9E26 /* MTableViewDelegate.swift */; };
 		E81BFC591F8DF199001B9E26 /* MTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81BFC581F8DF199001B9E26 /* MTableViewDataSource.swift */; };
+		E8B0310B1FB9697100B100D3 /* JSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B0310A1FB9697100B100D3 /* JSTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,16 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E81BFC1D1F8DCCC8001B9E26 /* JSPopupTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSPopupTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E81BFC1D1F8DCCC8001B9E26 /* JSTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JSTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81BFC201F8DCCC8001B9E26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E81BFC251F8DCCC8001B9E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E81BFC271F8DCCC8001B9E26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E81BFC2A1F8DCCC8001B9E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E81BFC2C1F8DCCC8001B9E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E81BFC311F8DCCC8001B9E26 /* JSPopupTransitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSPopupTransitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E81BFC311F8DCCC8001B9E26 /* JSTransitionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSTransitionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81BFC351F8DCCC8001B9E26 /* CustomTransitionDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionDemoTests.swift; sourceTree = "<group>"; };
 		E81BFC371F8DCCC8001B9E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E81BFC3C1F8DCCC8001B9E26 /* JSPopupTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSPopupTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E81BFC3C1F8DCCC8001B9E26 /* JSTransitionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSTransitionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81BFC401F8DCCC8001B9E26 /* CustomTransitionDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitionDemoUITests.swift; sourceTree = "<group>"; };
 		E81BFC421F8DCCC8001B9E26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E81BFC4E1F8DCCFC001B9E26 /* JSPopupTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSPopupTransition.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		E81BFC541F8DF13F001B9E26 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		E81BFC561F8DF188001B9E26 /* MTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTableViewDelegate.swift; sourceTree = "<group>"; };
 		E81BFC581F8DF199001B9E26 /* MTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTableViewDataSource.swift; sourceTree = "<group>"; };
+		E8B0310A1FB9697100B100D3 /* JSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,9 +89,9 @@
 		E81BFC141F8DCCC8001B9E26 = {
 			isa = PBXGroup;
 			children = (
-				E81BFC1F1F8DCCC8001B9E26 /* JSPopupTransition */,
-				E81BFC341F8DCCC8001B9E26 /* JSPopupTransitionTests */,
-				E81BFC3F1F8DCCC8001B9E26 /* JSPopupTransitionUITests */,
+				E81BFC1F1F8DCCC8001B9E26 /* JSTransition */,
+				E81BFC341F8DCCC8001B9E26 /* JSTransitionTests */,
+				E81BFC3F1F8DCCC8001B9E26 /* JSTransitionUITests */,
 				E81BFC1E1F8DCCC8001B9E26 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -97,51 +99,50 @@
 		E81BFC1E1F8DCCC8001B9E26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E81BFC1D1F8DCCC8001B9E26 /* JSPopupTransition.app */,
-				E81BFC311F8DCCC8001B9E26 /* JSPopupTransitionTests.xctest */,
-				E81BFC3C1F8DCCC8001B9E26 /* JSPopupTransitionUITests.xctest */,
+				E81BFC1D1F8DCCC8001B9E26 /* JSTransition.app */,
+				E81BFC311F8DCCC8001B9E26 /* JSTransitionTests.xctest */,
+				E81BFC3C1F8DCCC8001B9E26 /* JSTransitionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E81BFC1F1F8DCCC8001B9E26 /* JSPopupTransition */ = {
+		E81BFC1F1F8DCCC8001B9E26 /* JSTransition */ = {
 			isa = PBXGroup;
 			children = (
-				E81BFC5A1F8DF1AB001B9E26 /* MainView */,
-				E8C67A831F8F26DB001CE7FE /* DestinationView */,
-				E85D33A71F8E118E00FD02B1 /* Transition */,
+				E8B031061FB9690600B100D3 /* Controllers */,
+				E8B031071FB9692B00B100D3 /* Views */,
 				E85A57631F8E72A90017D8B9 /* SupportFiles */,
 				E81BFC2C1F8DCCC8001B9E26 /* Info.plist */,
 			);
-			path = JSPopupTransition;
+			path = JSTransition;
 			sourceTree = "<group>";
 		};
-		E81BFC341F8DCCC8001B9E26 /* JSPopupTransitionTests */ = {
+		E81BFC341F8DCCC8001B9E26 /* JSTransitionTests */ = {
 			isa = PBXGroup;
 			children = (
 				E81BFC351F8DCCC8001B9E26 /* CustomTransitionDemoTests.swift */,
 				E81BFC371F8DCCC8001B9E26 /* Info.plist */,
 			);
-			path = JSPopupTransitionTests;
+			path = JSTransitionTests;
 			sourceTree = "<group>";
 		};
-		E81BFC3F1F8DCCC8001B9E26 /* JSPopupTransitionUITests */ = {
+		E81BFC3F1F8DCCC8001B9E26 /* JSTransitionUITests */ = {
 			isa = PBXGroup;
 			children = (
 				E81BFC401F8DCCC8001B9E26 /* CustomTransitionDemoUITests.swift */,
 				E81BFC421F8DCCC8001B9E26 /* Info.plist */,
 			);
-			path = JSPopupTransitionUITests;
+			path = JSTransitionUITests;
 			sourceTree = "<group>";
 		};
-		E81BFC5A1F8DF1AB001B9E26 /* MainView */ = {
+		E81BFC5A1F8DF1AB001B9E26 /* MainViewController */ = {
 			isa = PBXGroup;
 			children = (
 				E81BFC541F8DF13F001B9E26 /* MainTableViewController.swift */,
 				E81BFC581F8DF199001B9E26 /* MTableViewDataSource.swift */,
 				E81BFC561F8DF188001B9E26 /* MTableViewDelegate.swift */,
 			);
-			path = MainView;
+			name = MainViewController;
 			sourceTree = "<group>";
 		};
 		E85A57631F8E72A90017D8B9 /* SupportFiles */ = {
@@ -164,20 +165,39 @@
 			path = Transition;
 			sourceTree = "<group>";
 		};
-		E8C67A831F8F26DB001CE7FE /* DestinationView */ = {
+		E8B031061FB9690600B100D3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E81BFC5A1F8DF1AB001B9E26 /* MainViewController */,
+				E8C67A831F8F26DB001CE7FE /* DestinationViewController */,
+			);
+			name = Controllers;
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		E8B031071FB9692B00B100D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E8B0310A1FB9697100B100D3 /* JSTableViewCell.swift */,
+				E85D33A71F8E118E00FD02B1 /* Transition */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E8C67A831F8F26DB001CE7FE /* DestinationViewController */ = {
 			isa = PBXGroup;
 			children = (
 				E81BFC521F8DE389001B9E26 /* DestinationViewController.swift */,
 			);
-			path = DestinationView;
+			path = DestinationViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E81BFC1C1F8DCCC8001B9E26 /* JSPopupTransition */ = {
+		E81BFC1C1F8DCCC8001B9E26 /* JSTransition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E81BFC451F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSPopupTransition" */;
+			buildConfigurationList = E81BFC451F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSTransition" */;
 			buildPhases = (
 				E81BFC191F8DCCC8001B9E26 /* Sources */,
 				E81BFC1A1F8DCCC8001B9E26 /* Frameworks */,
@@ -187,14 +207,14 @@
 			);
 			dependencies = (
 			);
-			name = JSPopupTransition;
+			name = JSTransition;
 			productName = CustomTransitionDemo;
-			productReference = E81BFC1D1F8DCCC8001B9E26 /* JSPopupTransition.app */;
+			productReference = E81BFC1D1F8DCCC8001B9E26 /* JSTransition.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E81BFC301F8DCCC8001B9E26 /* JSPopupTransitionTests */ = {
+		E81BFC301F8DCCC8001B9E26 /* JSTransitionTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E81BFC481F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSPopupTransitionTests" */;
+			buildConfigurationList = E81BFC481F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSTransitionTests" */;
 			buildPhases = (
 				E81BFC2D1F8DCCC8001B9E26 /* Sources */,
 				E81BFC2E1F8DCCC8001B9E26 /* Frameworks */,
@@ -205,14 +225,14 @@
 			dependencies = (
 				E81BFC331F8DCCC8001B9E26 /* PBXTargetDependency */,
 			);
-			name = JSPopupTransitionTests;
+			name = JSTransitionTests;
 			productName = CustomTransitionDemoTests;
-			productReference = E81BFC311F8DCCC8001B9E26 /* JSPopupTransitionTests.xctest */;
+			productReference = E81BFC311F8DCCC8001B9E26 /* JSTransitionTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E81BFC3B1F8DCCC8001B9E26 /* JSPopupTransitionUITests */ = {
+		E81BFC3B1F8DCCC8001B9E26 /* JSTransitionUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E81BFC4B1F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSPopupTransitionUITests" */;
+			buildConfigurationList = E81BFC4B1F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSTransitionUITests" */;
 			buildPhases = (
 				E81BFC381F8DCCC8001B9E26 /* Sources */,
 				E81BFC391F8DCCC8001B9E26 /* Frameworks */,
@@ -223,9 +243,9 @@
 			dependencies = (
 				E81BFC3E1F8DCCC8001B9E26 /* PBXTargetDependency */,
 			);
-			name = JSPopupTransitionUITests;
+			name = JSTransitionUITests;
 			productName = CustomTransitionDemoUITests;
-			productReference = E81BFC3C1F8DCCC8001B9E26 /* JSPopupTransitionUITests.xctest */;
+			productReference = E81BFC3C1F8DCCC8001B9E26 /* JSTransitionUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +274,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E81BFC181F8DCCC8001B9E26 /* Build configuration list for PBXProject "JSPopupTransition" */;
+			buildConfigurationList = E81BFC181F8DCCC8001B9E26 /* Build configuration list for PBXProject "JSTransition" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -267,9 +287,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E81BFC1C1F8DCCC8001B9E26 /* JSPopupTransition */,
-				E81BFC301F8DCCC8001B9E26 /* JSPopupTransitionTests */,
-				E81BFC3B1F8DCCC8001B9E26 /* JSPopupTransitionUITests */,
+				E81BFC1C1F8DCCC8001B9E26 /* JSTransition */,
+				E81BFC301F8DCCC8001B9E26 /* JSTransitionTests */,
+				E81BFC3B1F8DCCC8001B9E26 /* JSTransitionUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8B0310B1FB9697100B100D3 /* JSTableViewCell.swift in Sources */,
 				E81BFC4F1F8DCCFC001B9E26 /* JSPopupTransition.swift in Sources */,
 				E81BFC511F8DE2DD001B9E26 /* JSPopupNavigationControllerDelegate.swift in Sources */,
 				E81BFC591F8DF199001B9E26 /* MTableViewDataSource.swift in Sources */,
@@ -337,12 +358,12 @@
 /* Begin PBXTargetDependency section */
 		E81BFC331F8DCCC8001B9E26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E81BFC1C1F8DCCC8001B9E26 /* JSPopupTransition */;
+			target = E81BFC1C1F8DCCC8001B9E26 /* JSTransition */;
 			targetProxy = E81BFC321F8DCCC8001B9E26 /* PBXContainerItemProxy */;
 		};
 		E81BFC3E1F8DCCC8001B9E26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E81BFC1C1F8DCCC8001B9E26 /* JSPopupTransition */;
+			target = E81BFC1C1F8DCCC8001B9E26 /* JSTransition */;
 			targetProxy = E81BFC3D1F8DCCC8001B9E26 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -480,7 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DQ777MDT3;
-				INFOPLIST_FILE = "$(SRCROOT)/JSPopupTransition/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/JSTransition/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wjunshuo.CustomTransitionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -495,7 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3DQ777MDT3;
-				INFOPLIST_FILE = "$(SRCROOT)/JSPopupTransition/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/JSTransition/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = wjunshuo.CustomTransitionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -517,7 +538,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSPopupTransition.app/JSPopupTransition";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSTransition.app/JSTransition";
 			};
 			name = Debug;
 		};
@@ -534,7 +555,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSPopupTransition.app/JSPopupTransition";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSTransition.app/JSTransition";
 			};
 			name = Release;
 		};
@@ -573,7 +594,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E81BFC181F8DCCC8001B9E26 /* Build configuration list for PBXProject "JSPopupTransition" */ = {
+		E81BFC181F8DCCC8001B9E26 /* Build configuration list for PBXProject "JSTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E81BFC431F8DCCC8001B9E26 /* Debug */,
@@ -582,7 +603,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E81BFC451F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSPopupTransition" */ = {
+		E81BFC451F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSTransition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E81BFC461F8DCCC8001B9E26 /* Debug */,
@@ -591,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E81BFC481F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSPopupTransitionTests" */ = {
+		E81BFC481F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSTransitionTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E81BFC491F8DCCC8001B9E26 /* Debug */,
@@ -600,7 +621,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E81BFC4B1F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSPopupTransitionUITests" */ = {
+		E81BFC4B1F8DCCC8001B9E26 /* Build configuration list for PBXNativeTarget "JSTransitionUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E81BFC4C1F8DCCC8001B9E26 /* Debug */,

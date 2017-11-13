@@ -6,7 +6,7 @@
 //  Copyright © 2017年 王俊硕. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 
 extension MainTableViewController: UITableViewDataSource {
     
@@ -21,14 +21,11 @@ extension MainTableViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! JSTableViewCell
         cell.selectionStyle = .none
-        cell.textLabel?.attributedText = NSAttributedString(string: ["标题", "随便", "来一", "一个", "哈哈"][indexPath.row], attributes: [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.backgroundColor: UIColor.black])
-        
-        cell.backgroundColor = cellColors[indexPath.row]
+        cell.setup(title: titleSets[indexPath.row], imageName: imageSets[indexPath.row], description: descriptionSets[indexPath.row])
+
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return rowHeight
-    }
+   
 }

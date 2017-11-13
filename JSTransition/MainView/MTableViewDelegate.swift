@@ -12,9 +12,16 @@ extension MainTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let demo = storyboard!.instantiateViewController(withIdentifier: "Demo")
         let rect = tableView.convert(tableView.rectForRow(at: indexPath), to: self.view)
-        selectedCellColor = cellColors[indexPath.row]
+
+        selectedIndexPath = indexPath
         selectedOrigin = rect.origin
         navigationController?.delegate = transitionDelegate
         navigationController?.pushViewController(demo, animated: true)
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return rowHeight
+    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 0.001
+//    }
 }

@@ -8,9 +8,13 @@
 
 import UIKit
 
-class JSPopupTransition: NSObject ,UIViewControllerAnimatedTransitioning {
+class JSTransition: NSObject ,UIViewControllerAnimatedTransitioning {
     var fisrtStepHeight: CGFloat = 0
     var duration = 0.5
+    
+    let imageSets = ["duck", "squirrel", "fish", "unknown", "rabbit"]
+    let titleSets = ["duck", "squirrel", "fish", "unknown", "rabbit"]
+    let descriptionSets = ["a duck", "a squirrel", "a fish", "unknown monster", "a rabbit"]
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration // 动画时长
@@ -26,39 +30,60 @@ class JSPopupTransition: NSObject ,UIViewControllerAnimatedTransitioning {
 
         let container = transitionContext.containerView
         
-//        let toView = UIView()
-//        toView.frame = toViewController.view.frame
-//        toView.backgroundColor = fromView.backgroundColor
-        
         let originalFrame = toView.frame
+        let screenWidth = UIScreen.main.bounds.width
         let screentHeight = UIScreen.main.bounds.height
+        
+        
         container.addSubview(toView)
         
         
         if fromViewController.isKind(of: MainTableViewController.self) {
             let fromController = fromViewController as! MainTableViewController
             let toController = toViewController as! DestinationViewController
-            if let maskView = toController.maskView { maskView.backgroundColor = fromController.selectedCellColor }
-            let originalY = fromController.selectedOrigin.y
+            
+            let selectedIndex = fromController.selectedIndexPath!
+            toController.setup(title: titleSets[selectedIndex.row], imageName: imageSets[selectedIndex.row], description: descriptionSets[selectedIndex.row])
+            
+            let navigationBarOffset = CGFloat(64) // Add the navigation bar height
+            // calulte the position
+            let originalY = fromController.selectedOrigin.y + navigationBarOffset
             let rowHeight = fromController.rowHeight
             let scrollOffsetY = fromController.contentView.contentOffset.y + 64
             print(scrollOffsetY)
             let offset = originalY+64-screentHeight/2+rowHeight/2-scrollOffsetY
             let ratio = rowHeight/screentHeight
             
+            // add a animation mask view   the same frame as the cell
+            let maskView = UIImageView(image: UIImage(named: imageSets[selectedIndex.row]))
+            maskView.frame = CGRect(x: 0, y: originalY, width: screenWidth, height: 300) // row height
+            container.addSubview(maskView)
+            
             toView.frame = CGRect(origin: CGPoint(x: 0,y: offset), size: (toView.frame.size))
-            (toController).fromViewOffset = offset // TODO: guard
+            (toController).fromViewOffset = offset
             let duration = transitionDuration(using: transitionContext)
             toView.transform = CGAffineTransform(scaleX: 1, y: ratio)
 
-            let partOneDuration = duration * 0.77
-            let partTwoDuration = duration - partOneDuration
-            animate(view: toView, stepOneRatio: ratio*1.2, stepTwoRatio: 1, stepOneDuration: partOneDuration, stepTwoDuration: partTwoDuration, isBack: false, backOffset: 0, finalFrame: originalFrame) {
-                transitionContext.completeTransition(true)
-            }
+            let stepOneDuration = duration * 0.77
+            let stepTwoDuration = duration - stepOneDuration
+            let stepOneRatio = ratio*1.2
+            let stepTwoRatio = CGFloat(1.0)
             
+            UIView.animate(withDuration: stepOneDuration, delay: 0, options: .curveEaseOut, animations: {
+                toView.transform = CGAffineTransform(scaleX: 1, y: stepOneRatio)
+                // move maskView to the top
+                maskView.frame.origin = CGPoint(x: 0, y: navigationBarOffset) // UINavigationController bar
+            }) { _ in
+                UIView.animate(withDuration: stepTwoDuration, delay: 0, options: .curveEaseOut, animations: {
+                    toView.transform = CGAffineTransform(scaleX: 1, y: stepTwoRatio)
+                    toView.frame = originalFrame
+                }) { _ in
+                    maskView.removeFromSuperview() // remove maskView
+                    transitionContext.completeTransition(true)
+                }
+            }
         } else if fromViewController.isKind(of: DestinationViewController.self){
-            // 返回
+            // back
             let controller = toViewController as! MainTableViewController
             let rowHeight = controller.rowHeight
 
@@ -84,35 +109,5 @@ class JSPopupTransition: NSObject ,UIViewControllerAnimatedTransitioning {
         }
         
     }
-    /**
-     - Parameters:
-         - view: 进行动画的视图
-         - stepOneRatio: 第一步缩放的比例
-         - stepTwoRatio: 第二步缩放的比例
-         - stepOneDuration: 第一步动画的时间
-         - stepTwoDuration: 第二步动画的时间
-         - stepTwoFade: 第二步透明度变化
-         - isBack: 是否是返回
-         - backOffset: 返回时View的偏移量
-         - finalFrame: 控制器初识frame，用来还原位置
-         - completion: 完成之后调用的闭包
-     */
-    private func animate(view: UIView, stepOneRatio: CGFloat, stepTwoRatio: CGFloat, stepOneDuration: TimeInterval, stepTwoDuration: TimeInterval, isBack: Bool, backOffset offset: CGFloat, finalFrame: CGRect, completion: @escaping () -> ()) {
-        UIView.animate(withDuration: stepOneDuration, delay: 0, options: .curveEaseOut, animations: {
-            if isBack { view.frame = CGRect(origin: CGPoint(x: 0,y: offset), size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)) }
-            view.transform = CGAffineTransform(scaleX: 1, y: stepOneRatio)
-
-        }) { _ in
-            UIView.animate(withDuration: stepTwoDuration, delay: 0, options: .curveEaseOut, animations: {
-                view.transform = CGAffineTransform(scaleX: 1, y: stepTwoRatio)
-                if isBack { view.alpha = 0 } else {
-                    view.frame = finalFrame
-                }
-            }) { _ in
-                //                fromView?.alpha = 1
-                completion()
-            }
-            
-        }
-    }
+    
 }
